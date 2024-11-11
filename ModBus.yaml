@@ -1,0 +1,136 @@
+#Sensor - SofarSolar - Modbus
+  - name: SofarSolar
+    type: tcp
+    host: 192.168.1.22 #Converter RS485 - TCPip address
+    port: 502 # Default port
+    sensors:
+     - name: SofarSolar_PV1_Power
+       state_class: "measurement"
+       device_class: energy
+       unit_of_measurement: W
+       scale: 10
+       slave: 1
+       address: 0x000A
+     - name: SofarSolar_PV2_Power
+       state_class: "measurement"
+       device_class: energy
+       unit_of_measurement: W
+       scale: 10
+       slave: 1
+       address: 0x000B
+     - name: SofarSolar_PV1_Voltage
+       state_class: "measurement"
+       device_class: energy
+       unit_of_measurement: V
+       scale: 0.1
+       slave: 1
+       address: 0x0006
+     - name: SofarSolar_PV2_Voltage
+       state_class: "measurement"
+       device_class: energy
+       unit_of_measurement: V
+       scale: 0.1
+       slave: 1
+       address: 0x0008
+     - name: SofarSolar_PV1_Current
+       state_class: "measurement"
+       device_class: energy
+       unit_of_measurement: A
+       scale: 0.01
+       precision: 2
+       slave: 1
+       address: 0x0007
+     - name: SofarSolar_PV2_Current
+       state_class: "measurement"
+       device_class: energy
+       unit_of_measurement: A
+       scale: 0.01
+       precision: 2
+       slave: 1
+       address: 0x0009
+     - name: SofarSolar_Total_Production
+       unit_of_measurement: kWh
+       scale: 1
+       slave: 1
+       address: 0x0016
+       device_class: energy
+       state_class: total_increasing
+     - name: SofarSolar_Daily_Production
+       unit_of_measurement: kWh
+       scale: 0.01
+       precision: 2
+       slave: 1
+       address: 0x0019
+       state_class: total_increasing
+     - name: SofarSolar_Daily_GenerationTime
+       unit_of_measurement: min
+       scale: 1
+       slave: 1
+       address: 0x001A
+     - name: SofarSolar_Actual_Power
+       state_class: "measurement"
+       device_class: energy
+       unit_of_measurement: W
+       scale: 10
+       slave: 1
+       address: 0x000C
+     - name: SofarSolar_Voltage_L1
+       unit_of_measurement: V
+       state_class: "measurement"
+       scale: 0.1
+       precision: 2
+       slave: 1
+       address: 0x000F
+       device_class: voltage
+     - name: SofarSolar_Voltage_L2
+       unit_of_measurement: V
+       state_class: "measurement"
+       scale: 0.1
+       precision: 2
+       slave: 1
+       address: 0x0011
+       device_class: voltage
+     - name: SofarSolar_Voltage_L3
+       unit_of_measurement: V
+       state_class: "measurement"
+       scale: 0.1
+       precision: 2
+       slave: 1
+       address: 0x0013
+       device_class: voltage
+     - name: SofarSolar_Current_L1
+       unit_of_measurement: A
+       state_class: "measurement"
+       scale: 0.01
+       precision: 2
+       slave: 1
+       address: 0x0010
+       device_class: power
+     - name: SofarSolar_Current_L2
+       unit_of_measurement: A
+       state_class: "measurement"
+       scale: 0.01
+       precision: 2
+       slave: 1
+       address: 0x0012
+       device_class: power
+     - name: SofarSolar_Current_L3
+       unit_of_measurement: A
+       state_class: "measurement"
+       scale: 0.01
+       precision: 2
+       slave: 1
+       address: 0x0014
+       device_class: power
+     - name: Inverter_Inner_Temp
+       unit_of_measurement: c
+       state_class: "measurement"
+       slave: 1
+       address: 0x001C
+       device_class: temperature
+     - name: Inverter_Module_Temp
+       unit_of_measurement: c
+       state_class: "measurement"
+       slave: 1
+       address: 0x001B
+       device_class: temperature
