@@ -1,0 +1,1 @@
+# HomeAssistant_SofarSolar_Modbus_TCP-IP
